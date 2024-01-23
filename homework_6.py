@@ -23,7 +23,12 @@ def start(message):
         'deistvie': None,
         'ammo': None,
     }
-    bot.send_message(message.chat.id, "Привет, вам предстоит пройти текстовый квиз!")
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    btn1 = types.KeyboardButton("1️⃣")
+    btn2 = types.KeyboardButton("2️⃣")
+    btn3 = types.KeyboardButton("3️⃣")
+    markup.add(btn1, btn2, btn3)
+    bot.send_message(message.chat.id, "Привет, вам предстоит пройти текстовый квиз!".format(message.from_user), reply_markup=markup)
     start_quizz(message)
 def start_quizz(message):
     bot.send_message(message.chat.id,
@@ -40,14 +45,14 @@ def start_quizz(message):
 
 
 def test(message):
-    if message.text in ['1', '2', '3']: # вывод результата
-        if message.text == '1':
+    if message.text in ["1️⃣", "2️⃣", "3️⃣"] or message.text in ["1", "2", "3"]: # вывод результата
+        if message.text == "1️⃣" or message.text == "1":
             users_data[message.chat.id] = 1
             test_1(message)
-        elif message.text == '2':
+        elif message.text == "2️⃣" or message.text == "2":
             users_data[message.chat.id] = 2
             test_2(message)
-        else:
+        elif message.text == "3️⃣" or message.text == "3":
             users_data[message.chat.id] = 3
             test_3(message)
     else: # если не корректен ввод просим ввести заново
@@ -95,12 +100,12 @@ def test_3(message):
                                       "3. Поймете что у вас есть шанс на спасение в будущем, и начнете строить плот")
     bot.register_next_step_handler(message, test_3_if)
 def test_3_if(message):
-    if message.text in ['1', '2', '3']:
-        if message.text == '1':
+    if message.text in ["1️⃣", "2️⃣", "3️⃣"] or message.text in ["1", "2", "3"]:
+        if message.text == "1️⃣" or message.text == "1":
             test_3_1(message)
-        elif message.text == '2':
+        elif message.text == "2️⃣" or message.text == "2":
             test_3_2(message)
-        else:
+        elif message.text == "3️⃣" or message.text == "3":
             test_3_3(message)
     else:
         bot.send_message(message.chat.id, "Введите 1, 2 или 3!")
