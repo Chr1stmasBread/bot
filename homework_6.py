@@ -1,6 +1,7 @@
 import telebot
 import time
 from info_quizz import *
+from telebot import types
 bot = telebot.TeleBot(TOKEN)
 users_data = {
 
