@@ -6,13 +6,13 @@ users_data = {
 
 }
 def dead(message):
-    dead_s = "\home\student\\bot\dead.jpg"
+    dead_s = ".\screen_1\dead.jpg"
     with open(dead_s, 'rb') as f:
         bot.send_photo(message.chat.id, f)
     time.sleep(2)
     bot.send_message(message.chat.id, "Если Вы хотите попрбовать еще раз, напишите /start")
 def win(message):
-    win_s = "\home\student\\bot\win.jpg"
+    win_s = ".\screen_1\win.jpg"
     with open(win_s, 'rb') as f:
         bot.send_photo(message.chat.id, f)
     time.sleep(2)
@@ -28,7 +28,7 @@ def start(message):
 def start_quizz(message):
     bot.send_message(message.chat.id,
         "Вы оказались на необитаемом острове.")
-    island_s = "\home\student\\bot\island.jpg"
+    island_s = ".\screen_1\island.jpg"
     with open(island_s, 'rb') as f:
         bot.send_photo(message.chat.id, f)
     bot.send_message(message.chat.id,"У вас есть несколько действий\n"
@@ -56,7 +56,7 @@ def test(message):
 def test_1(message):
     bot.send_message(message.chat.id, "Вы отправились изучать остров")
     bot.send_message(message.chat.id, "Пока вы изучали остров, вы нашли поселение дикарей-канибалов.")
-    back_s_1 = "\home\student\\bot\canibal.jpg"
+    back_s_1 = ".\screen_1\canibal.jpg"
     with open(back_s_1, 'rb') as f:
         bot.send_photo(message.chat.id, f)
     bot.send_message(message.chat.id, "Вы пришли в шок.")
@@ -69,7 +69,7 @@ def test_1(message):
 def test_2(message):
     bot.send_message(message.chat.id, "Вы идете в лес")
     bot.send_message(message.chat.id, "Пока Вы ходили по лесу, Вы нашли поселение дикарей-канибалов.")
-    back_s_2 = "\home\student\\bot\canibal.jpg"
+    back_s_2 = ".\screen_1\canibal.jpg"
     with open(back_s_2, 'rb') as f:
         bot.send_photo(message.chat.id, f)
     bot.send_message(message.chat.id, "Вы пришли в шок.")
@@ -80,13 +80,13 @@ def test_2(message):
     dead(message)
 def test_3(message):
     bot.send_message(message.chat.id, "Вы решили остаться на месте, где вы и очнулись.")
-    later = "\home\student\\bot\moment_later.jpeg"
+    later = ".\screen_1\moment_later.jpeg"
     time.sleep(1)
     with open(later, 'rb') as f:
         bot.send_photo(message.chat.id, f)
     time.sleep(1)
     bot.send_message(message.chat.id, "Вы освоились, построили небольшой домик на окраине острова, выживаете.")
-    back_s_3_1 = "\home\student\\bot\if_3_1.jpg"
+    back_s_3_1 = ".\screen_1\if_3_1.jpg"
     with open(back_s_3_1, 'rb') as f:
         bot.send_photo(message.chat.id, f)
     bot.send_message(message.chat.id, "Спустя несколько лет, Вы видите его КОРАБЛЬ, который идет недалеко от Вашего острова, что вы будете делать?\n"
@@ -107,31 +107,31 @@ def test_3_if(message):
         bot.register_next_step_handler(message, test_3_if)
 def test_3_1(message):
     bot.send_message(message.chat.id, "Вы решаетесь доплыть до корабля своими силами.")
-    swim = "\home\student\\bot\swim_to_cargo.jpg"
+    swim = ".\screen_1\swim_to_cargo.jpg"
     with open(swim, 'rb') as f:
         bot.send_photo(message.chat.id, f)
     bot.send_message(message.chat.id, "Вам не хватает сил, и вы отключаетесь прямо в воде.")
     dead(message)
 def test_3_2(message):
     bot.send_message(message.chat.id, "Вы решаетесь добежать до возвышенности острова, и попытаетесь привлечь внимаение")
-    run = "\home\student\\bot\!run.jpg"
+    run = ".\screen_1\!run.jpg"
     with open(run, 'rb') as f:
         bot.send_photo(message.chat.id, f)
     bot.send_message(message.chat.id, "Пока Вы бежали, Вы заметили дикарей-канибалов, Вы решили остановиться и изучить их, они были похожи на людей, но разговаривали на непонятном вам языке, Вы начили их изучать и назвали их 'Шорики'.")
     bot.send_message(message.chat.id, "Спустя несколько лет изучений, Вы изучили их настолько досканально что знали о них Все, и решили проводить над ними опыты, у себя в доме.")
     bot.send_message(message.chat.id, "Вам наскучили, эти 'изучения', и Вы решили проверить их способности по охоте на людей. Но где же вам взять людей? *Продолжение следует ...*")
-    continue_s = "\home\student\\bot\continued.jpeg"
+    continue_s = ".\screen_1\continued.jpeg"
     with open(continue_s, 'rb') as f:
         bot.send_photo(message.chat.id, f)
     bot.send_message(message.chat.id, "Если Вы хотите попрбовать еще раз, напишите /start")
 
 def test_3_3(message):
     bot.send_message(message.chat.id, "Вы решаетесь подождать еще некоторое время, и пока вы ждете, вы строите плот.")
-    raw = "\home\student\\bot\!raw.jpg"
+    raw = ".\screen_1\!raw.jpg"
     with open(raw, 'rb') as f:
         bot.send_photo(message.chat.id, f)
     bot.send_message(message.chat.id, "Спустя несколько лет ожиданий, Вы решаете поплыть в неизвестном направлении на построеном Вами плоту, берете с собой запасы еды, воды.")
-    swim_raw = "\home\student\\bot\swim_with_raw.jpg"
+    swim_raw = ".\screen_1\swim_with_raw.jpg"
     with open(swim_raw, 'rb') as f:
         bot.send_photo(message.chat.id, f)
     bot.send_message(message.chat.id, "Спустя несколько лет ожиданий, Вас находит мимо проходящий корабль, и подбирает вас.")
